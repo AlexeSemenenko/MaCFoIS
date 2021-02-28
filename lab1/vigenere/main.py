@@ -1,3 +1,5 @@
+import re
+
 ALPHABET = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 N = len(ALPHABET)
 
@@ -37,8 +39,13 @@ def decryption(ciphertext, key):
 
 
 if __name__ == '__main__':
-    text_test = 'СЕМЕНЕНКО'
-    key_test = 'ЁЗЪ'
+    text_test = input('Enter text: ').upper()
+    text_test = re.sub(r'[^\w]', '', text_test)
+
+    key_test = input('Enter key: ').upper()
+    key_test = re.sub(r'[^\w]', '', key_test)
+
     text_encrypt = encryption(text_test, key_test)
-    print(text_encrypt)
-    print(decryption(text_encrypt, key_test))
+
+    print('Encrypted: ' + text_encrypt)
+    print('Decrypted: ' + decryption(text_encrypt, key_test))
