@@ -54,6 +54,5 @@ if __name__ == '__main__':
     text_test = input('Enter text: ').upper()
     text_test = re.sub(r'[^\w]', '', text_test)
 
-    print('Encrypted: ' + encryption(text_test, int(a), int(b)))
-    # print('Decrypted: ' + decryption(text_test, x, int(b)))
-
+    # print('Encrypted: ' + encryption(text_test, int(a), int(b)))
+    print('Decrypted: ' + decryption(text_test, x, int(b)))
